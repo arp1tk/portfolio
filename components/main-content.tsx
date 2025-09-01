@@ -24,7 +24,6 @@ export function MainContent() {
                 key={proj.name}
                 type="button"
                 onClick={() => setSelectedProject(index)}
-                // Use borders on the items themselves for a cleaner grid
                 className={`w-full text-left p-3 text-sm font-mono font-medium border-b border-gray-300 lg:border-b-0 ${
                   index % 2 === 0 ? "lg:border-r lg:border-gray-300" : ""
                 } ${
@@ -58,8 +57,8 @@ export function MainContent() {
               </div>
             )}
 
-            {/* Links with safe optional chaining */}
-            {project.links?.length > 0 && (
+            {/* ✅ Fixed links with safe optional chaining */}
+            {project.links && project.links.length > 0 && (
               <div className="flex flex-wrap gap-4 mt-3">
                 {project.links.map((link) => (
                   <a
@@ -95,8 +94,8 @@ export function MainContent() {
               </div>
             )}
 
-            {/* Features with safe optional chaining and proper list styling */}
-            {project.features?.length > 0 && (
+            {/* ✅ Features are already safe */}
+            {project.features && project.features.length > 0 && (
               <div className="mt-4">
                 <h3 className="font-semibold text-black text-base mb-2">
                   Key Features:
