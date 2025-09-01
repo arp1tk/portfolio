@@ -13,9 +13,10 @@ export function Sidebar() {
 
         {/* Education */}
         <div>
-          <p className="text-sm lg:text-base text-black">
-            Currently studying <em>Computer Science and Design</em> @ IMS Engineering College, Ghaziabad.
-          </p>
+         <p className="text-sm lg:text-base text-black">
+  Currently studying <em>Computer Science and Design</em> @ IMS Engineering College, Ghaziabad, 
+  expected to graduate in <strong>2026</strong>.
+</p>
         </div>
 
        

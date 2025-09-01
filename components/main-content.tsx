@@ -45,20 +45,19 @@ export function MainContent() {
           {/* Image and Links on the left */}
           <div className="w-full max-w-lg">
             {/* Use the dynamic image from the project data */}
-           {project.image && project.image.length > 0 && (
-  <div className="flex flex-col gap-3">
-    {project.image.map((imgSrc, index) => (
-      <img
-        key={index}
-        src={imgSrc}
-        alt={`Screenshot ${index + 1} of ${project.name}`}
-        className="w-full h-auto object-cover border border-gray-300 rounded-md"
-      />
-    ))}
-  </div>
-)}
+            {project.image && project.image.length > 0 && (
+              <div className="flex flex-col gap-3">
+                {project.image.map((imgSrc, index) => (
+                  <img
+                    key={index}
+                    src={imgSrc}
+                    alt={`Screenshot ${index + 1} of ${project.name}`}
+                    className="w-full h-auto object-cover border border-gray-300 rounded-md"
+                  />
+                ))}
+              </div>
+            )}
 
-            
             {/* Links with safe optional chaining */}
             {project.links?.length > 0 && (
               <div className="flex flex-wrap gap-4 mt-3">
@@ -86,6 +85,16 @@ export function MainContent() {
               {project.description}
             </p>
 
+            {/* --- TECH STACK SECTION --- */}
+            {project.tech && (
+              <div className="mt-4">
+                <p className="text-sm">
+                  <span className="font-semibold text-black/80">Built with: </span>
+                  <span className="text-gray-600">{project.tech}</span>
+                </p>
+              </div>
+            )}
+
             {/* Features with safe optional chaining and proper list styling */}
             {project.features?.length > 0 && (
               <div className="mt-4">
@@ -94,7 +103,10 @@ export function MainContent() {
                 </h3>
                 <ul className="list-disc list-inside space-y-1.5">
                   {project.features.map((feature, index) => (
-                    <li key={index} className="text-sm text-black/80 leading-relaxed">
+                    <li
+                      key={index}
+                      className="text-sm text-black/80 leading-relaxed"
+                    >
                       {feature}
                     </li>
                   ))}

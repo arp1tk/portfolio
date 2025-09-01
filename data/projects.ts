@@ -2,7 +2,7 @@ import type { Project } from "@/types/project"
 
 export const projects: Project[] = [
   {
-    name: "Tattletale",
+    name: "Tattletale (Built for NIA)",
     category: "Investigation Tool",
     tech: "React.js, Tailwind CSS, MongoDB, Express.js, Playwright, REST APIs",
     description:
@@ -22,7 +22,7 @@ export const projects: Project[] = [
       },
     ],
 
-    image:["/tattletale.png"]
+    image:["/tattletale.png","tt.png"]
   },
   {
     name: "Open Journal",
@@ -90,4 +90,28 @@ export const projects: Project[] = [
     ],
     image:["/devix.png"]
   },
+  {
+  name: "Points Leaderboard",
+  category: "Gamified Scoring & Leaderboard Platform",
+  tech: "React.js, Tailwind CSS, Node.js (Express), MongoDB",
+  description:
+    "A responsive, production-ready leaderboard system where users can be created, claim random points, and see rankings update instantly with a podium-style UI and full activity history.",
+  features: [
+    "Podium-style leaderboard for top 3 with dynamic ranks and responsive layout",
+    "Claim random points (1–10) for any user with instant UI refresh and toast feedback",
+    "Create new users from the frontend and persist them in the database",
+    "Comprehensive points history view with date grouping and clean, readable cards",
+    "Professional light theme, collapsible mobile sidebar, and accessible components",
+    "Reusable, modular React components with clean state and loading/error handling",
+    "Optimized fetch-based API integration and UX-focused empty/loading states"
+  ],
+  links: [
+    {
+      label: "Frontend (React) Demo",
+      url: "https://leaderboard-delta-eight.vercel.app/"
+    },
+   
+  ],
+  image: ["/ps-1.png", "/ps-2.png"]
+}
 ]
