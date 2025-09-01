@@ -10,7 +10,7 @@ export function MainContent() {
   const project = projects[selectedProject];
 
   return (
-    <main className="flex-1 py-8">
+    <main className="flex-1 py-6">
       <div className="space-y-12">
         {/* --- SELECTED WORK LIST --- */}
         <div id="work">
@@ -45,13 +45,19 @@ export function MainContent() {
           {/* Image and Links on the left */}
           <div className="w-full max-w-lg">
             {/* Use the dynamic image from the project data */}
-            {project.image && (
-              <img
-                src={project.image}
-                alt={`Screenshot of ${project.name}`}
-                className="w-full h-auto object-cover border border-gray-300 rounded-md"
-              />
-            )}
+           {project.image && project.image.length > 0 && (
+  <div className="flex flex-col gap-3">
+    {project.image.map((imgSrc, index) => (
+      <img
+        key={index}
+        src={imgSrc}
+        alt={`Screenshot ${index + 1} of ${project.name}`}
+        className="w-full h-auto object-cover border border-gray-300 rounded-md"
+      />
+    ))}
+  </div>
+)}
+
             
             {/* Links with safe optional chaining */}
             {project.links?.length > 0 && (

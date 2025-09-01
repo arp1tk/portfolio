@@ -4,7 +4,7 @@ export interface Project {
   tech: string
   description: string
   features?: string[]
-  image?: string
+  image?: string[]
   links?: {
     label: string
     url: string

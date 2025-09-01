@@ -15,7 +15,14 @@ export const projects: Project[] = [
       "Enabled seamless report generation and export through user-friendly dashboards",
   
     ],
-    image:""
+        links: [
+      {
+        label: "Visit ",
+        url: "https://github.com/arp1tk/project-NARC",
+      },
+    ],
+
+    image:["/tattletale.png"]
   },
   {
     name: "Open Journal",
@@ -28,9 +35,35 @@ export const projects: Project[] = [
       "Streamlined submission and decision workflows for academic organizations",
       "Enabled authors to submit papers, track revisions, and make payments with transparent version control",
       "Frontend featured reusable components, validation logic, and responsive UX",
+    ], links: [
+      {
+        label: "Visit Site",
+        url: "https://open-journal-frontend-git-backend-dep-arpit-s-projects-75b13d7d.vercel.app/",
+      },
     ],
-    image:""
+    image:["/op2.png","/op1.png"]
   },
+  {
+  "name": "Spectra",
+  "category": "Spotify Data Visualization App",
+  "tech": "Next.js, React.js, Tailwind CSS, Spotify Web API, OAuth 2.0",
+  "description": "A Next.js web application that transforms your Spotify music data into a personalized, immersive music exploration experience, featuring a dark, cosmic-themed interface to visualize listening habits and generate unique playlists.",
+  "features": [
+    "Visualize your top tracks and artists on a personalized, interactive dashboard.",
+    "Generate 'Time Travel' playlists for different decades (e.g., 80s, 90s) based on your current music taste.",
+    "Analyze the audio features of your music, such as danceability, energy, and mood, with insightful charts.",
+    "Discover your celebrity or fictional character music 'Doppelgänger' based on your listening habits.",
+    "Save any generated playlist directly to your Spotify account with a single click."
+  ],
+  "links": [
+   
+    {
+      "label": "View on GitHub",
+      "url": "https://github.com/arp1tk/Sonic-Verse"
+    }
+  ],
+  "image": ["/sp.png", "/sp1.png"]
+},
   {
     name: "K Design Interiors",
     category: "Business Website",
@@ -42,12 +75,12 @@ export const projects: Project[] = [
         url: "https://www.kdesign-interiors.com/",
       },
     ],
-    image:""
+    image:["/kdesign.png"]
   },
   {
     name: "DevixLab",
     category: "Business Website",
-    tech: "React.js, Next.js, Tailwind CSS",
+    tech: "Next.js, Tailwind CSS ,Aceternity UI",
     description: "IT Consultancy Company Website to showcase their services and portfolios.",
     links: [
       {
@@ -55,6 +88,6 @@ export const projects: Project[] = [
         url: "https://www.devixlab.com/",
       },
     ],
-    image:""
+    image:["/devix.png"]
   },
 ]

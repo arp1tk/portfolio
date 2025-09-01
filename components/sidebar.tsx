@@ -7,8 +7,7 @@ export function Sidebar() {
         {/* Introduction */}
         <div>
           <p className="text-base lg:text-lg leading-relaxed text-black">
-            Hi! I'm a full stack developer passionate about creating scalable web solutions, building innovative
-            applications, and solving complex problems through technology.
+           Hi! I'm a Full Stack Developer passionate about creating scalable web solutions, building innovative applications, and solving complex problems through technology. I have hands-on experience with the MERN stack, Next.js, and RESTful APIs, and was part of the Smart India Hackathon 2024 winning team, where we built a social media investigation platform for the National Investigation Agency (NIA), India.
           </p>
         </div>
 
@@ -19,36 +18,33 @@ export function Sidebar() {
           </p>
         </div>
 
-        {/* Contact Links */}
-        <div className="flex flex-wrap gap-3 lg:gap-4 text-xs lg:text-sm">
-          <Link href="mailto:arpitkukrety27@gmail.com" className="text-gray-600 hover:text-black underline">
-            Email
-          </Link>
-          <Link
-            href="https://linkedin.com/in/arpit-kukreti-4a3824302"
-            className="text-gray-600 hover:text-black underline"
-          >
-            LinkedIn
-          </Link>
-          <span className="text-gray-700">+91 9870894706</span>
-        </div>
+       
 
         {/* Freelance above Achievements */}
         <div className="border-t border-gray-900 pt-4">
           <h2 className="text-lg lg:text-xl font-bold text-black mb-3 lg:mb-4">FREELANCE DEVELOPER</h2>
-          <div>
-            <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-1.5">
-              <div>
-                <h3 className="font-semibold text-black text-sm lg:text-base">Full Stack Developer</h3>
-                <p className="text-gray-600 text-xs lg:text-sm">MERN Stack</p>
-              </div>
-              <span className="text-xs lg:text-sm text-gray-600 mt-1 lg:mt-0">Dec 2024 – Present</span>
-            </div>
-            <p className="text-xs lg:text-sm text-black leading-relaxed">
-              Delivered professional websites including Interior Design Company (kdesign-interiors.com) and IT
-              Consultancy (devixlab.com) using React/Next.js and Tailwind with responsive UI/UX.
-            </p>
-          </div>
+         <div>
+  <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-1.5">
+    <div>
+      <h3 className="font-semibold text-black text-sm lg:text-base">Full Stack Developer</h3>
+      <p className="text-gray-600 text-xs lg:text-sm">MERN Stack | Next.js | Tailwind CSS</p>
+    </div>
+    <span className="text-xs lg:text-sm text-gray-600 mt-1 lg:mt-0">Dec 2024 – Present</span>
+  </div>
+  <p className="text-xs lg:text-sm text-black leading-relaxed">
+    Built professional websites like 
+    (<a href="https://kdesign-interiors.com" target="_blank" className="text-blue-600 hover:underline">kdesign-interiors.com</a>)
+    and 
+    (<a href="https://devixlab.com" target="_blank" className="text-blue-600 hover:underline">devixlab.com</a>)
+    using <strong>React/Next.js</strong> and <strong>Tailwind CSS</strong> with modern, responsive UIs.
+  </p>
+  <p className="text-xs lg:text-sm text-black leading-relaxed mt-1.5">
+    Developed <strong>RESTful APIs</strong>, integrated <strong>MongoDB</strong>, and optimized performance for
+    faster load times and seamless data handling.
+  </p>
+
+</div>
+
         </div>
 
         {/* Achievements */}
