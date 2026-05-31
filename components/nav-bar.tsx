@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react"
 
 const links = [
   { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
+  { label: "Profile", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
@@ -15,56 +15,50 @@ export function NavBar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-4 z-50 px-4">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between rounded-full border border-line-subtle bg-surface/80 px-3 py-2 shadow-sm backdrop-blur">
-        <a href="#home" className="flex items-center gap-2 pl-1">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-ink text-sm font-bold text-on-ink">
-            AK
-          </span>
-          <span className="hidden text-sm font-semibold text-content sm:block">
-            Arpit Kukreti
-          </span>
-        </a>
-
-        <div className="hidden items-center gap-6 md:flex">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm text-muted transition-colors hover:text-content"
-            >
-              {l.label}
-            </a>
-          ))}
-        </div>
-
-        <div className="flex items-center gap-2">
+    <header className="sticky top-0 z-50 bg-canvas pt-6">
+      <div className="mx-auto w-full max-w-3xl px-6">
+        <nav className="card flex items-center justify-between gap-6 p-1.5">
+          {/* Monogram avatar (photo slot) */}
           <a
-            href="#contact"
-            className="hidden rounded-full bg-ink px-4 py-2 text-sm font-medium text-on-ink transition-opacity hover:opacity-90 sm:block"
+            href="#home"
+            aria-label="Home"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-ink text-[13px] tracking-normal text-white"
+            style={{ borderColor: "var(--color-avatar)" }}
           >
-            Contact Me
+            AK
           </a>
-          <button
-            type="button"
-            aria-label="Toggle menu"
-            onClick={() => setOpen((v) => !v)}
-            className="rounded-full p-2 text-content md:hidden"
-          >
-            {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
-        </div>
-      </nav>
 
-      {open && (
-        <div className="mx-auto mt-2 max-w-5xl rounded-2xl border border-line-subtle bg-surface p-4 shadow-md md:hidden">
-          <div className="flex flex-col gap-1">
+          <div className="hidden items-center md:flex">
+            {links.map((l) => (
+              <a key={l.href} href={l.href} className="nav-link">
+                {l.label}
+              </a>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-2">
+            <a href="#contact" className="btn btn-primary hidden sm:inline-flex">
+              Contact Me
+            </a>
+            <button
+              type="button"
+              aria-label="Toggle menu"
+              onClick={() => setOpen((v) => !v)}
+              className="flex h-10 w-10 items-center justify-center rounded-xl bg-ink text-white md:hidden"
+            >
+              {open ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
+        </nav>
+
+        {open && (
+          <div className="card mt-1 flex flex-col p-3 md:hidden">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2 text-sm text-muted hover:bg-surface-alt hover:text-content"
+                className="nav-link"
               >
                 {l.label}
               </a>
@@ -72,13 +66,13 @@ export function NavBar() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="mt-1 rounded-lg bg-ink px-3 py-2 text-center text-sm font-medium text-on-ink"
+              className="btn btn-primary mt-1"
             >
               Contact Me
             </a>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </header>
   )
 }

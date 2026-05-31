@@ -10,7 +10,7 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-surface">
+    <div className="min-h-screen bg-canvas pb-4">
       <NavBar />
       <main>
         <Hero />

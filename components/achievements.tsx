@@ -18,20 +18,18 @@ const achievements = [
 
 export function Achievements() {
   return (
-    <section className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
-      <SectionHeading eyebrow="Achievements" title="Milestones" />
-      <div className="grid gap-6 sm:grid-cols-2">
+    <section className="mx-auto w-full max-w-3xl px-6 pt-20">
+      <SectionHeading title="Achievements" />
+      <div className="grid gap-3 sm:grid-cols-2">
         {achievements.map((a, i) => (
           <FadeIn key={a.title} delay={i * 0.05}>
-            <div className="flex gap-4 rounded-2xl border border-line-subtle bg-surface p-6 shadow-sm">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
-                <a.icon size={20} />
-              </div>
+            <div className="card flex h-full flex-col gap-4 p-6 pb-8">
+              <span className="icon-tile w-fit">
+                <a.icon size={24} />
+              </span>
               <div>
-                <h3 className="font-semibold text-content">{a.title}</h3>
-                <p className="mt-1 text-sm leading-relaxed text-muted">
-                  {a.detail}
-                </p>
+                <h3>{a.title}</h3>
+                <p className="mt-2 text-muted">{a.detail}</p>
               </div>
             </div>
           </FadeIn>

@@ -2,35 +2,30 @@ import { Mail, Download } from "lucide-react"
 
 export function Hero() {
   return (
-    <section
-      id="home"
-      className="mx-auto flex max-w-5xl flex-col items-center px-4 pb-16 pt-20 text-center sm:pt-28"
-    >
-      <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-line-subtle bg-surface-alt px-3 py-1.5">
-        <span className="status-dot h-2 w-2 rounded-full bg-status" />
-        <span className="text-sm font-medium text-muted">Available for Work</span>
+    <section id="home" className="mx-auto w-full max-w-3xl px-6 pb-2 pt-20">
+      <div className="mb-6 flex flex-col items-center gap-2 text-center">
+        <span className="chip">
+          <span className="status-ring">
+            <span />
+          </span>
+          Available for Work
+        </span>
+        <h1>Arpit Kukreti</h1>
+        <p className="subtitle max-w-[424px]">
+          Full Stack Developer building scalable web apps with the MERN stack &
+          Next.js. Smart India Hackathon 2024 Winner.
+        </p>
       </div>
 
-      <h1 className="text-5xl font-semibold tracking-tight text-content sm:text-6xl">
-        Arpit Kukreti
-      </h1>
-      <p className="mt-4 max-w-xl text-lg text-muted">
-        Full Stack Developer — building scalable web apps with the MERN stack &
-        Next.js. Smart India Hackathon 2024 Winner.
-      </p>
-
-      <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-        <a
-          href="mailto:arpitkukrety27@gmail.com"
-          className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-medium text-on-ink transition-opacity hover:opacity-90"
-        >
+      <div className="flex flex-col items-stretch justify-center gap-2 sm:flex-row sm:items-center">
+        <a href="mailto:arpitkukrety27@gmail.com" className="btn btn-primary">
           <Mail size={16} /> Send Email
         </a>
         <a
           href="/arpitResume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-3 text-sm font-medium text-content transition-colors hover:bg-surface-alt"
+          className="btn btn-secondary"
         >
           <Download size={16} /> Download CV
         </a>
