@@ -1,26 +1,258 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Monochrome palette ported from thomas-scott (scraped-site.css :root) */
+  --color-canvas: #f9f9f9;        /* page background  (--grey-background) */
+  --color-surface: #ffffff;       /* cards            (--white) */
+  --color-ink: #1d1d26;           /* headings / primary buttons (--black) */
+  --color-ink-soft: #33333b;      /* hover ink        (--grey-90) */
+  --color-muted: #77777d;         /* body text        (--grey-60) */
+  --color-subtle: #8e8e92;        /* subtle text      (--grey-50) */
+  --color-line: #ededee;          /* card borders     (--grey-8) */
+  --color-line-strong: #e3e3e4;   /* divider / footer (--grey-10) */
+  --color-fill: #ededee;          /* secondary button (--grey-8) */
+  --color-fill-soft: #f6f6f6;     /* icon tiles / hover (--grey-4) */
+  --color-status-ring: #cbf7df;   /* status dot ring */
+  --color-status-dot: #2ede7f;    /* status dot */
+  --color-avatar: #bb576c;        /* avatar accent border */
+
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  /* radii: chips 8, controls/tiles 12, cards/nav 16 */
+  --radius-chip: 8px;
+  --radius-control: 12px;
+  --radius-card: 16px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-canvas);
+  color: var(--color-muted);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.28px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-ink);
+  font-weight: 500;
+  margin: 0;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -1.44px;
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 36px;
+    letter-spacing: -1.08px;
+  }
+}
+
+h2 {
+  font-size: 21px;
+  line-height: 1.2;
+  letter-spacing: -0.63px;
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: -0.32px;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: #ffffff;
+}
+
+/* ----------------------------------------------------------------
+   Component primitives ported from thomas-scott (.block / .button /
+   .chips / .block-icon-wrapper / status ellipse / nav links)
+   ---------------------------------------------------------------- */
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  box-shadow: 0 6px 12px rgba(29, 29, 38, 0.04);
+}
+
+.icon-tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-line);
+  background: var(--color-fill-soft);
+  border-radius: var(--radius-control);
+  padding: 14px;
+  color: var(--color-ink);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  border-radius: var(--radius-chip);
+  padding: 6px 12px;
+  font-size: 12px;
+  letter-spacing: -0.12px;
+  line-height: 1.4;
+  color: var(--color-muted);
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+a.chip:hover {
+  color: var(--color-ink);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--radius-control);
+  padding: 10px 16px;
+  font-weight: 500;
+  letter-spacing: -0.28px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.btn-primary {
+  background: var(--color-ink);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: var(--color-ink-soft);
+}
+
+.btn-secondary {
+  background: var(--color-fill);
+  color: var(--color-ink);
+}
+
+.btn-secondary:hover {
+  background: var(--color-line-strong);
+}
+
+.nav-link {
+  color: var(--color-muted);
+  border-radius: var(--radius-control);
+  padding: 10px 12px;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  color: var(--color-ink);
+  background: var(--color-fill-soft);
+}
+
+.status-ring {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: var(--color-status-ring);
+}
+
+.status-ring > span {
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  background: var(--color-status-dot);
+}
+
+.subtitle {
+  font-size: 18px;
+  letter-spacing: -0.36px;
+  line-height: 1.4;
+  color: var(--color-muted);
+}
+
+/* ----------------------------------------------------------------
+   Skills marquee — slow, monochrome auto-scrolling rows
+   ---------------------------------------------------------------- */
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  margin-bottom: -12px;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-track--reverse {
+  animation-direction: reverse;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  margin: 0 12px 12px 0;
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  border-radius: 9999px;
+  padding: 8px 16px;
+  color: var(--color-content);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .marquee-track {
+    width: auto;
+    flex-wrap: wrap;
+    animation: none;
+  }
 }
