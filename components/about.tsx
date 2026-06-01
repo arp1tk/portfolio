@@ -5,49 +5,46 @@ export function About() {
   return (
     <section id="about" className="mx-auto w-full max-w-3xl px-6 pt-20">
       <FadeIn>
-        <div className="grid gap-3 md:grid-cols-[3fr_5fr]">
-          {/* Image slot — monogram (no photo) */}
-          <div
-            className="card flex min-h-[220px] items-center justify-center overflow-hidden"
-            style={{
-              background:
-                "linear-gradient(150deg, var(--color-ink), var(--color-ink-soft))",
-            }}
-          >
-            <span className="text-[64px] leading-none tracking-[-2px] text-white">
-              AK
-            </span>
-          </div>
-
-          {/* Text card */}
-          <div className="card flex flex-col gap-6 p-6 pb-8">
+        <div className="card p-8 sm:p-10">
+          {/* Header */}
+          <div className="flex items-center gap-4">
             <span className="icon-tile w-fit">
-              <Code2 size={24} />
+              <Code2 size={24} strokeWidth={1.75} />
             </span>
-
             <div>
               <h2>Professional Profile</h2>
-              <p className="mt-3 text-muted">
-                Full Stack Developer passionate about creating scalable web
-                solutions, building innovative applications, and solving complex
-                problems through technology. Hands-on experience with the MERN
-                stack, Next.js, and RESTful APIs. Part of the Smart India
-                Hackathon 2024 winning team, building a social-media
-                investigation platform for the National Investigation Agency
-                (NIA), India.
-              </p>
+              <p className="mt-0.5 text-subtle">Full Stack Developer</p>
             </div>
+          </div>
 
-            <div className="flex flex-col gap-2 text-subtle">
-              <span className="flex items-center gap-1.5">
-                <GraduationCap size={14} />
-                B.Tech, Computer Science &amp; Design — IMS Engineering College,
-                2026
-              </span>
-              <span className="flex items-center gap-1.5">
-                <MapPin size={14} />
-                Ghaziabad, India
-              </span>
+          {/* Bio */}
+          <p className="mt-6 max-w-2xl text-muted">
+            Full Stack Developer passionate about creating scalable web
+            solutions, building innovative applications, and solving complex
+            problems through technology. Hands-on experience with the MERN
+            stack, Next.js, and RESTful APIs. Part of the Smart India Hackathon
+            2024 winning team, building a social-media investigation platform
+            for the National Investigation Agency (NIA), India.
+          </p>
+
+          {/* Meta */}
+          <div className="mt-8 grid gap-6 border-t border-line pt-6 sm:grid-cols-2">
+            <div className="flex items-start gap-3">
+              <GraduationCap size={18} strokeWidth={1.75} className="mt-0.5 shrink-0 text-ink" />
+              <div>
+                <p className="text-ink">Education</p>
+                <p className="mt-0.5 text-subtle">
+                  B.Tech, Computer Science &amp; Design — IMS Engineering
+                  College, 2026
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <MapPin size={18} strokeWidth={1.75} className="mt-0.5 shrink-0 text-ink" />
+              <div>
+                <p className="text-ink">Location</p>
+                <p className="mt-0.5 text-subtle">Ghaziabad, India</p>
+              </div>
             </div>
           </div>
         </div>

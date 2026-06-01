@@ -185,3 +185,74 @@ a.chip:hover {
   line-height: 1.4;
   color: var(--color-muted);
 }
+
+/* ----------------------------------------------------------------
+   Skills marquee — slow, monochrome auto-scrolling rows
+   ---------------------------------------------------------------- */
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  margin-bottom: -12px;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-track--reverse {
+  animation-direction: reverse;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  margin: 0 12px 12px 0;
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  border-radius: 9999px;
+  padding: 8px 16px;
+  color: var(--color-content);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .marquee-track {
+    width: auto;
+    flex-wrap: wrap;
+    animation: none;
+  }
+}
