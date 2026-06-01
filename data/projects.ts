@@ -22,7 +22,7 @@ export const projects: Project[] = [
       },
     ],
 
-    image:["/tattletale.png","tt.png"]
+    image:["/tattletale.png","/tt.png"]
   },
   {
     name: "Open Journal",
